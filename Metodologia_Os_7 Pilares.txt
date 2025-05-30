@@ -1,0 +1,62 @@
+# Metodologia: Os 7 Pilares de um Projeto de BI
+
+## Introdução
+
+O desenvolvimento deste projeto seguiu os 7 pilares fundamentais que norteiam projetos de Business Intelligence, garantindo qualidade, eficiência e alinhamento às melhores práticas do mercado.
+
+## 1. Extração
+
+Coleta e transferência de dados de múltiplas fontes:
+
+- Arquivos TXT
+- Planilhas Excel
+- OneDrive
+
+**Objetivo:** preparar os dados para análises e visualizações.
+
+## 2. Estruturação
+
+Organização das informações para torná-las:
+
+- Acessíveis.
+- Utilizáveis para relatórios e tomadas de decisão.
+
+## 3. Modelagem
+
+Processo de estabelecer conexões significativas entre tabelas, criando um modelo que:
+
+- Facilita a análise.
+- Enriquece a compreensão do negócio.
+
+## 4. Cálculos
+
+Desenvolvimento de métricas essenciais através de:
+
+- Indicadores chave de desempenho (KPIs).
+- Medidas para avaliação de resultados.
+
+## 5. Visuais
+
+Construção de uma narrativa visual clara, utilizando:
+
+- Gráficos e tabelas.
+- Conceitos de Data Storytelling para comunicar insights de forma impactante.
+
+## 6. Distribuição
+
+Compartilhamento eficiente dos relatórios com usuários e stakeholders, promovendo:
+
+- Disseminação das informações.
+- Apoio à tomada de decisão.
+
+## 7. Automatização
+
+Configuração de processos automáticos para:
+
+- Atualização periódica dos dados.
+- Garantia da precisão e relevância das análises ao longo do tempo.
+
+## Consideração Final
+
+A aplicação consistente destes 7 pilares assegura a qualidade e eficiência do projeto, transformando dados brutos em conhecimento estratégico.
+MATIZAÇÃO - Essencial para atualização automatica e agendada dos dados garantindo sua relevancia e precisao ao longo do tempo.

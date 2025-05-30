@@ -1,0 +1,33 @@
+# Requisitos de Negócio - Dashboard Financeiro
+
+## Descrição do Projeto
+
+- **Projeto:** Dashboard Financeiro
+- **Área:** Financeira
+- **Início das Atividades:** 2017
+- **Fontes de Dados:** Arquivos TXT, Planilhas Excel, OneDrive
+
+## Objetivos Gerais
+
+Realizar a análise completa da movimentação financeira da empresa, incluindo:
+
+- Receitas
+- Custos
+- Despesas
+- Lucros
+
+## Análises Requeridas
+
+1. Receita por mês, comparada com o mesmo mês do ano anterior.
+2. Receita por tipo de conta.
+3. Pagamentos por tipo de conta.
+4. Pagamentos por tipo e por mês.
+5. Receita por cliente.
+6. Fluxo de caixa por mês, apresentado:
+
+   - Em gráfico de cascata.
+   - De forma detalhada em tabela, com uma tela exclusiva para este fim.
+
+## Consideração Final
+
+O atendimento a esses requisitos garante que o dashboard ofereça insights financeiros relevantes, apoiando a gestão estratégica da empresa.

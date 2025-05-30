@@ -1,0 +1,24 @@
+let
+
+	Fonte = Pagamentos[Date] & Recebimentos[Date],
+	DataMin = Date.StartOfYear( List.Min(Fonte) ),
+	DataMax = Date.EndOfYear( List.Max(Fonte) ),
+	QtdeDias = Number.From( DataMax - DataMin ) + 1,
+	ListDates = List.Dates(DataMin, QtdeDias, #duration(1,0,0,0)),
+	ConvertidoTabela = Table.FromList(ListDates, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+	NomeDiaInserido = Table.AddColumn(ConvertidoTabela, "NomeDia", each Text.BeforeDelimiter(Date.DayOfWeekName([Column1]), "-"), type text),
+	NomeMesInserido = Table.AddColumn(NomeDiaInserido, "NomeMes", each Date.MonthName([Column1]), type text),
+	MesAbrevInserido = Table.AddColumn(NomeMesInserido, "MesAbreviado", each Text.Start([NomeMes], 3), type text),
+	SemanaMesInserida = Table.AddColumn(MesAbrevInserido, "SemanaMes", each Text.PadStart( Text.From(Date.WeekOfMonth([Column1])), 2, "0") & "ª - Sem"),
+	SemanaAnoInserida = Table.AddColumn(SemanaMesInserida, "SemanaAno", each Text.PadStart( Text.From(Date.WeekOfYear([Column1])), 2, "0") & "ª - Sem"),
+	NumMesInserido = Table.AddColumn(SemanaAnoInserida, "NumMes", each Date.Month([Column1]), Int64.Type),
+	TrimestreInserido = Table.AddColumn(NumMesInserido, "Trimestre", each Text.PadStart( Text.From(Date.QuarterOfYear([Column1])), 2, "0") & "º - Tri"),
+	AnoInserido = Table.AddColumn(TrimestreInserido, "Ano", each Date.Year([Column1]), Int64.Type),
+	MesAnoInserido = Table.AddColumn(AnoInserido, "MesAno", each Text.Combine({[MesAbreviado], Text.From([Ano], "pt-BR")}, " - "), type text),
+	PriMaiuscula = Table.TransformColumns(MesAnoInserido,{{"NomeDia", Text.Proper, type text}, {"NomeMes", Text.Proper, type text}, {"MesAbreviado", Text.Proper, type text}, {"MesAno", Text.Proper, type text}}),
+	ColunasRenomeadas = Table.RenameColumns(PriMaiuscula,{{"Column1", "Data"}}),
+	TipoAlterado = Table.TransformColumnTypes(ColunasRenomeadas,{{"Data", type date}, {"SemanaMes", type text}, {"SemanaAno", type text}, {"Trimestre", type text}})
+	
+in
+
+	TipoAlterado

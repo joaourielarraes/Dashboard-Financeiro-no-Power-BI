@@ -1,0 +1,46 @@
+# Modelagem de Dados no Power BI
+
+## O que é Modelagem de Dados?
+
+A Modelagem de Dados no Power BI é o processo de organizar e estruturar as informações de forma que elas sejam facilmente analisadas e visualizadas. Um modelo de dados é composto por:
+
+- **Tabelas:** conjuntos de dados extraídos de diferentes fontes como bancos de dados, arquivos Excel, TXT, entre outros.
+- **Relacionamentos:** conexões entre tabelas, que permitem a integração e análise cruzada de informações.
+- **Medidas:** fórmulas criadas em DAX (Data Analysis Expressions) para realizar cálculos dinâmicos e gerar insights.
+
+O modelo de dados é a base essencial para criação de relatórios e dashboards no Power BI.
+
+## Tipos de Modelos de Dados
+
+### 1. Modelo Estrela (Star Schema)
+
+**Estrutura:** Uma tabela fato central, conectada a várias tabelas dimensão.
+
+**Características:**
+
+- Tabelas dimensão armazenam dados descritivos (Ex.: produtos, clientes, datas).
+- A tabela fato contém dados quantitativos (Ex.: valores financeiros).
+
+**Vantagens:**
+
+- Estrutura simples.
+- Facilidade de consulta.
+- Eficiência nas análises.
+
+### 2. Modelo Floco de Neve (Snowflake Schema)
+
+**Estrutura:** Extensão do modelo estrela, com tabelas dimensão normalizadas em várias tabelas menores.
+
+**Vantagens:**
+
+- Redução de redundância de dados.
+- Melhoria na consistência.
+
+**Desvantagens:**
+
+- Estrutura mais complexa.
+- Possível redução no desempenho das consultas.
+
+## Aplicação no Projeto
+
+Neste projeto, utilizamos o **modelo estrela**, combinando simplicidade e eficiência, com o suporte de uma **dCalendar** para análises temporais.
